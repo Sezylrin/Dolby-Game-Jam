@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerLandslide : MonoBehaviour
+public class TriggerLandslide : EnvironmentBaseClass
 {
     public AudioClip triggerSound;
     public float detectionRadius = 5.0f;

@@ -2,18 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerVolcano : MonoBehaviour
+public class TriggerVolcano : EnvironmentBaseClass
 {
-    public AudioClip triggerSound;
-    public float detectionRadius=5.0f;
-    public Transform player;
-
-    private bool playerInRange = false;
-
     // Start is called before the first frame update
     void Start()
     {
         playerInRange = false;
+        soundMuted = false;
     }
 
     // Update is called once per frame
@@ -28,15 +23,27 @@ public class TriggerVolcano : MonoBehaviour
             {
                 // Player entered the detection radius for the first time
                 playerInRange = true;
+
+                // Mute the sound
+                soundMuted = true;
+                /*
                 if (triggerSound != null)
                 {
                     AudioSource.PlayClipAtPoint(triggerSound, transform.position);
+                }*/
+
+                 // Check if the player's "sonarlight_turn_on" variable is true
+                if (player.GetComponent<PlayerController>().sonarlight_turn_on)
+                {
+                    // Pass the audio sample to the player for playback
+                    player.GetComponent<PlayerController>().PlayOneShot(triggerSound);
                 }
             }
             else if (distance > detectionRadius && playerInRange)
             {
                 // Player moved out of the detection radius
                 playerInRange = false;
+                soundMuted = false;
             }
         }
     }
