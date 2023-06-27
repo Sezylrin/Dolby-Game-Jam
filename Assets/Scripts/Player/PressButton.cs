@@ -10,6 +10,7 @@ public class PressButton : NetworkBehaviour
     private Camera cam;
     public Transform camPos;
     public LayerMask buttonLayer;
+    public LayerMask ladders;   
     public float interactDist;
     public Jam playerInput;
     void Start()
@@ -45,6 +46,7 @@ public class PressButton : NetworkBehaviour
 
     public void CheckClick(InputAction.CallbackContext context)
     {
+        if (!IsOwner) return;
         Debug.Log("pressing");
         RaycastHit hit;
         if (Physics.Raycast(camPos.position, cam.transform.forward, out hit, interactDist, buttonLayer))
@@ -52,7 +54,25 @@ public class PressButton : NetworkBehaviour
             Debug.Log("Triggering Hit");
             hit.collider.GetComponent<BaseButton>().TriggerButton();
         }
+
+        if (Physics.Raycast(camPos.position, cam.transform.forward, out hit, interactDist, ladders))
+        {
+            TeleportServerRpc(/*hit.collider.GetComponent<BaseButton>().newPos*/hit.collider.GetComponent<BaseButton>().newPos);
+        }
     }
+    
+    [ContextMenu("Teleport")]
+    [ServerRpc(RequireOwnership = false)]
+    public void TeleportServerRpc(/*Vector3 pos*/Vector3 pos)
+    {
+        TeleportClientRpc(pos);
+    }
+    [ClientRpc]
+    public void TeleportClientRpc(Vector3 pos)
+    {
+        transform.position = pos;
+    }
+        
     // Update is called once per frame
     void FixedUpdate()
     {
