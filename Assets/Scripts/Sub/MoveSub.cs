@@ -39,9 +39,15 @@ public class MoveSub : NetworkBehaviour
     public bool toggleSonar = false;
 
     public bool IsLightOn = false;
+
+    GameObject flickeringLight;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        //assign flicking light
+        flickeringLight = GameObject.Find("FlickerLight");
 
         //Invoke("StartMove", 3);
     }
@@ -180,6 +186,11 @@ public class MoveSub : NetworkBehaviour
         if (IsLightOn)
         {
             //play flash animation on the light
+            flickeringLight.SetActive(true);
+        }
+        else
+        {
+            flickeringLight.SetActive(false);
         }
     }
 
