@@ -7,7 +7,6 @@ public class MoveSub : NetworkBehaviour
 {
     // Start is called before the first frame update
     private Rigidbody rb;
-
     public float Velocity;
 
     public float speedFactor;
@@ -24,6 +23,7 @@ public class MoveSub : NetworkBehaviour
 
     public float pressureChangeValue;
 
+    public float heightChangeValue;
     public float pressureMin;
     public float pressureMax;
 
@@ -31,6 +31,10 @@ public class MoveSub : NetworkBehaviour
     public bool decreasePreasure = false;
 
     public bool temp = false;
+
+    public bool toggleSonar = false;
+
+    public bool IsLightOn = false;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -41,6 +45,7 @@ public class MoveSub : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!IsServer) return;
         if (Mathf.Abs(transform.eulerAngles.y - currentAngle) < 1)
         {
             transform.eulerAngles = new Vector3(0, currentAngle, 0);
@@ -64,7 +69,11 @@ public class MoveSub : NetworkBehaviour
 
         if (currentPressure < pressureMin)
         {
-
+            transform.position += Vector3.up * heightChangeValue * Time.deltaTime;
+        }
+        if (currentPressure > pressureMin)
+        {
+            transform.position -= Vector3.up * heightChangeValue * Time.deltaTime;
         }
     }
 
@@ -149,4 +158,24 @@ public class MoveSub : NetworkBehaviour
         decreasePreasure = !decreasePreasure;
     }
 
+    [ContextMenu("ToggleSound")]
+    [ServerRpc(RequireOwnership = false)]
+    public void ToggleSound()
+    {
+        toggleSonar = !toggleSonar;
+    }
+
+
+    [ContextMenu("ToggleFlashingLight")]
+    [ServerRpc(RequireOwnership = false)]
+    public void ToggleSoundLight()
+    {
+        IsLightOn = !IsLightOn;
+        if (IsLightOn)
+        {
+            //play flash animation on the light
+        }
+    }
+
+    
 }
