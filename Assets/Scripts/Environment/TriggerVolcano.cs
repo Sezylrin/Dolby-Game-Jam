@@ -14,10 +14,7 @@ public class TriggerVolcano : EnvironmentBaseClass
     // Update is called once per frame
     void Update()
     {
-        if (player != null) // Replace "TriggerZone" with the appropriate tag for the trigger zone
-        {
-            
-        }
+        PlayAudio();
     }
 
 

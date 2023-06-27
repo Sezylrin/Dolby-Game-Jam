@@ -13,4 +13,9 @@ MonoBehaviour:
   m_Name: netobj
   m_EditorClassIdentifier: 
   IsDefault: 0
-  List: []
+  List:
+  - Override: 0
+    Prefab: {fileID: 8760446116623235002, guid: a3bfccd15617c0e4eb8be9aa3bb99223, type: 3}
+    SourcePrefabToOverride: {fileID: 0}
+    SourceHashToOverride: 0
+    OverridingTargetPrefab: {fileID: 0}

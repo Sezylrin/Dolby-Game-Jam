@@ -79,6 +79,8 @@ public class MoveSub : NetworkBehaviour
         {
             transform.position -= Vector3.up * heightChangeValue * Time.deltaTime;
         }
+
+        audioSourceObj.transform.position = initialPos + reletivePos;
     }
 
     public void StartMove()

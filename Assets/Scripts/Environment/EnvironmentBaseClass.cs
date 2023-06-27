@@ -22,7 +22,9 @@ public class EnvironmentBaseClass : MonoBehaviour
             sub.reletivePos = transform.position - player.transform.position;
             AudioSource temp = sub.audioSourceObj.GetComponent<AudioSource>();
             temp.clip = triggerSound;
-            temp.Play();
+            temp.loop = true;
+            if(!temp.isPlaying)
+                temp.Play();
             if (sub.toggleSonar)
             {
                 temp.mute = false;
@@ -30,6 +32,10 @@ public class EnvironmentBaseClass : MonoBehaviour
             else
                 temp.mute = true;
 
+        }
+        else
+        {
+            sub.IsLightOn = false;
         }
     }
 
