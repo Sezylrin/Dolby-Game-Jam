@@ -64,10 +64,6 @@ namespace StarterAssets
 		private float _jumpTimeoutDelta;
 		private float _fallTimeoutDelta;
 
-		//animation 
-		public GameObject modelObj;
-		Animator animator;
-
 	
 #if ENABLE_INPUT_SYSTEM
 		private PlayerInput _playerInput;
@@ -103,8 +99,6 @@ namespace StarterAssets
 		{
 			_controller = GetComponent<CharacterController>();
 			_input = GetComponent<StarterAssetsInputs>();
-			
-			//initilaize the animation variable 
 #if ENABLE_INPUT_SYSTEM
 			_playerInput = GetComponent<PlayerInput>();
 #else
@@ -167,18 +161,6 @@ namespace StarterAssets
 			// note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
 			// if there is no input, set the target speed to 0
 			if (_input.move == Vector2.zero) targetSpeed = 0.0f;
-
-			// walking animation 
-			/*
-			if(_input.move != Vector2.zero) 
-			{
-				animator.SetBool("Walking", true);
-			}
-			if(_input.move == Vector2.zero)
-			{
-				animator.SetBool("Walking", true);
-			}
-			*/
 
 			// a reference to the players current horizontal velocity
 			float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
