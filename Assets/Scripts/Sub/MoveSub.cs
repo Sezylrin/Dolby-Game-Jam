@@ -8,6 +8,7 @@ public class MoveSub : NetworkBehaviour
     // Start is called before the first frame update
     private Rigidbody rb;
     public float Velocity;
+    public List<AudioSource> audioSourceList=new List<AudioSource>();
 
     public float speedFactor;
     public float maxVelocity;

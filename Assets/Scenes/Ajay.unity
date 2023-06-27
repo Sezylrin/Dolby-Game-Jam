@@ -684,6 +684,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3207719858282001130, guid: 665661ac91124cb47b30abc6fea0f620, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207719858282001130, guid: 665661ac91124cb47b30abc6fea0f620, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1d53a6d5c56154e49b909cf63896a62e, type: 3}
+    - target: {fileID: 3207719858282001130, guid: 665661ac91124cb47b30abc6fea0f620, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8487468722183621733, guid: 665661ac91124cb47b30abc6fea0f620, type: 3}
       propertyPath: m_Name
       value: Volcano
