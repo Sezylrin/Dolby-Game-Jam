@@ -464,7 +464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3490871967101642217, guid: 372c7481837baed4c947183395b8d25f, type: 3}
       propertyPath: m_Name
-      value: 'Flicker Light '
+      value: 'FlickerLight '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -535,3 +535,64 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bca5fec0c9293d48a6bc05a4f7ccaef, type: 3}
+--- !u!1001 &7470882813356852865
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6842564960395115350, guid: caf0d73476ba83e4f9f8a4e704f952c8, type: 3}
+      propertyPath: m_Name
+      value: NewHostileMonster
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549200654309759533, guid: caf0d73476ba83e4f9f8a4e704f952c8, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549200654309759533, guid: caf0d73476ba83e4f9f8a4e704f952c8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 13.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549200654309759533, guid: caf0d73476ba83e4f9f8a4e704f952c8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.28735626
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549200654309759533, guid: caf0d73476ba83e4f9f8a4e704f952c8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549200654309759533, guid: caf0d73476ba83e4f9f8a4e704f952c8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549200654309759533, guid: caf0d73476ba83e4f9f8a4e704f952c8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549200654309759533, guid: caf0d73476ba83e4f9f8a4e704f952c8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549200654309759533, guid: caf0d73476ba83e4f9f8a4e704f952c8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549200654309759533, guid: caf0d73476ba83e4f9f8a4e704f952c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549200654309759533, guid: caf0d73476ba83e4f9f8a4e704f952c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549200654309759533, guid: caf0d73476ba83e4f9f8a4e704f952c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: caf0d73476ba83e4f9f8a4e704f952c8, type: 3}

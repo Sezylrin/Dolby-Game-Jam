@@ -24,8 +24,6 @@ public class FrickerControl : MonoBehaviour
         {
             StartCoroutine(FlickeringLight());
         }
-        //player alarm sound 
-        
     }
 
     IEnumerator FlickeringLight()

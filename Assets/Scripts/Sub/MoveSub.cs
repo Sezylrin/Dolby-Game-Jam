@@ -35,9 +35,15 @@ public class MoveSub : NetworkBehaviour
     public bool toggleSonar = false;
 
     public bool IsLightOn = false;
+
+    GameObject flickeringLight;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        //assign flicking light
+        flickeringLight = GameObject.Find("FlickerLight");
 
         //Invoke("StartMove", 3);
     }
@@ -160,7 +166,7 @@ public class MoveSub : NetworkBehaviour
 
     [ContextMenu("ToggleSound")]
     [ServerRpc(RequireOwnership = false)]
-    public void ToggleSound()
+    public void ToggleSoundServerRpc()
     {
         toggleSonar = !toggleSonar;
     }
@@ -168,12 +174,17 @@ public class MoveSub : NetworkBehaviour
 
     [ContextMenu("ToggleFlashingLight")]
     [ServerRpc(RequireOwnership = false)]
-    public void ToggleSoundLight()
+    public void ToggleSoundLightServerRpc()
     {
         IsLightOn = !IsLightOn;
         if (IsLightOn)
         {
             //play flash animation on the light
+            flickeringLight.SetActive(true);
+        }
+        else
+        {
+            flickeringLight.SetActive(false);
         }
     }
 
