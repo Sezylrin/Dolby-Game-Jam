@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class TriggerLandslide : EnvironmentBaseClass
 {
-    public AudioClip triggerSound;
-    public float detectionRadius = 5.0f;
-    public Transform player;
-
-    private bool playerInRange = false;
 
     // Start is called before the first frame update
     void Start()

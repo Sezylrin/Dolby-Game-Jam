@@ -9,6 +9,9 @@ public class MoveSub : NetworkBehaviour
     private Rigidbody rb;
     public float Velocity;
     public List<AudioSource> audioSourceList=new List<AudioSource>();
+    public GameObject audioSourceObj;
+    public Vector3 reletivePos;
+    public Vector3 initialPos;
 
     public float speedFactor;
     public float maxVelocity;

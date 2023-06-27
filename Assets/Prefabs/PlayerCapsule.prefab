@@ -148,13 +148,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8275518215211674880}
   - component: {fileID: 8760446116623234992}
-  - component: {fileID: 8760446116623235005}
   - component: {fileID: 1545636325627845962}
   - component: {fileID: 4989148879079467974}
   - component: {fileID: 8760446116623234998}
   - component: {fileID: 9064532883136608086}
   - component: {fileID: -935354915861064966}
   - component: {fileID: -5880567374337864094}
+  - component: {fileID: -2427465131622476964}
   m_Layer: 8
   m_Name: PlayerCapsule
   m_TagString: Player
@@ -205,35 +205,6 @@ CharacterController:
   m_SkinWidth: 0.02
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0.93, z: 0}
---- !u!114 &8760446116623235005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8760446116623235002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55919ac34a26952479f3fc91f777b2fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoveSpeed: 4
-  SprintSpeed: 6
-  RotationSpeed: 1
-  SpeedChangeRate: 10
-  JumpHeight: 1.2
-  Gravity: -15
-  JumpTimeout: 0.1
-  FallTimeout: 0.15
-  Grounded: 1
-  GroundedOffset: -0.14
-  GroundedRadius: 0.5
-  GroundLayers:
-    serializedVersion: 2
-    m_Bits: 1
-  CinemachineCameraTarget: {fileID: 3991667433654111969}
-  TopClamp: 89
-  BottomClamp: -89
 --- !u!114 &1545636325627845962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,3 +409,32 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   interactDist: 5
+--- !u!114 &-2427465131622476964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8760446116623235002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22ed7de7ca4c8034d9b99633124b34a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveSpeed: 4
+  SprintSpeed: 6
+  RotationSpeed: 1
+  SpeedChangeRate: 10
+  JumpHeight: 1.2
+  Gravity: -15
+  JumpTimeout: 0.1
+  FallTimeout: 0.15
+  Grounded: 1
+  GroundedOffset: -0.14
+  GroundedRadius: 0.5
+  GroundLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  CinemachineCameraTarget: {fileID: 3991667433654111969}
+  TopClamp: 90
+  BottomClamp: -90
