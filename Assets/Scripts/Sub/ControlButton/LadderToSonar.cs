@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseButton : MonoBehaviour
+public class LadderToSonar : BaseButton     
 {
     // Start is called before the first frame update
-    public MoveSub sub;
-    public Vector3 newPos;
-    public virtual void TriggerButton()
+    void Start()
     {
+        
+    }
 
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }

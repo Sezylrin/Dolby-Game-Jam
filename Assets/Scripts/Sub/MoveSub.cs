@@ -160,7 +160,7 @@ public class MoveSub : NetworkBehaviour
 
     [ContextMenu("ToggleSound")]
     [ServerRpc(RequireOwnership = false)]
-    public void ToggleSound()
+    public void ToggleSoundServerRpc()
     {
         toggleSonar = !toggleSonar;
     }
@@ -168,7 +168,7 @@ public class MoveSub : NetworkBehaviour
 
     [ContextMenu("ToggleFlashingLight")]
     [ServerRpc(RequireOwnership = false)]
-    public void ToggleSoundLight()
+    public void ToggleSoundLightServerRpc()
     {
         IsLightOn = !IsLightOn;
         if (IsLightOn)
