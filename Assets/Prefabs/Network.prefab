@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2594286580397074078
 MonoBehaviour:
@@ -51,7 +51,7 @@ MonoBehaviour:
     PlayerPrefab: {fileID: 8760446116623235002, guid: a3bfccd15617c0e4eb8be9aa3bb99223, type: 3}
     Prefabs:
       NetworkPrefabsLists:
-      - {fileID: 11400000, guid: 21220b20525f480429715faf00d04fd8, type: 2}
+      - {fileID: 11400000, guid: e823f0af0349d764dbd1f095d9914daa, type: 2}
     TickRate: 30
     ClientConnectionBufferTimeout: 10
     ConnectionApproval: 0
