@@ -434,7 +434,4 @@ MonoBehaviour:
   buttonLayer:
     serializedVersion: 2
     m_Bits: 64
-  ladders:
-    serializedVersion: 2
-    m_Bits: 128
   interactDist: 5
