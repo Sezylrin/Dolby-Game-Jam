@@ -10,4 +10,9 @@ public class BaseButton : MonoBehaviour
     {
 
     }
+
+    private void Start()
+    {
+        sub = GameObject.FindWithTag("Submarine").GetComponent<MoveSub>();
+    }
 }
