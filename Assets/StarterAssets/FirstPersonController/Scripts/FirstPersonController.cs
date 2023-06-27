@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
-using Unity.Netcode;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
-using Cinemachine;
 #endif
 
 namespace StarterAssets
@@ -11,7 +9,7 @@ namespace StarterAssets
 #if ENABLE_INPUT_SYSTEM
 	[RequireComponent(typeof(PlayerInput))]
 #endif
-	public class FirstPersonController : NetworkBehaviour
+	public class FirstPersonController : MonoBehaviour
 	{
 		[Header("Player")]
 		[Tooltip("Move speed of the character in m/s")]
@@ -76,8 +74,6 @@ namespace StarterAssets
 
 		private const float _threshold = 0.01f;
 
-		private CinemachineVirtualCamera _cinemachineVirtualCamera;
-
 		private bool IsCurrentDeviceMouse
 		{
 			get
@@ -97,42 +93,28 @@ namespace StarterAssets
 			{
 				_mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 			}
-
-			if (!_cinemachineVirtualCamera)
-            {
-				_cinemachineVirtualCamera = FindObjectOfType<CinemachineVirtualCamera>();
-            }
 		}
 
 		private void Start()
 		{
 			_controller = GetComponent<CharacterController>();
 			_input = GetComponent<StarterAssetsInputs>();
+#if ENABLE_INPUT_SYSTEM
+			_playerInput = GetComponent<PlayerInput>();
+#else
+			Debug.LogError( "Starter Assets package is missing dependencies. Please use Tools/Starter Assets/Reinstall Dependencies to fix it");
+#endif
 
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
 		}
 
-        public override void OnNetworkSpawn()
-        {
-            base.OnNetworkSpawn();
-			if (IsClient && IsOwner)
-            {
-				_playerInput = GetComponent<PlayerInput>();
-				_playerInput.enabled = true;
-				_cinemachineVirtualCamera.Follow = CinemachineCameraTarget.transform;
-			}
-        }
-
-
 		private void Update()
 		{
-			if (!IsOwner) return;
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
-			Debug.DrawRay(CinemachineCameraTarget.transform.position, _mainCamera.gameObject.transform.forward, Color.green);
 		}
 
 		private void LateUpdate()
